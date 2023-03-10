@@ -1,0 +1,57 @@
+html {
+  font-size: 15px;
+}
+
+.main {
+}
+.container {
+  padding: 1.5rem;
+}
+.header {
+}
+.accordion {
+}
+
+.accordion__wrapper {
+}
+
+.accordion__item {
+}
+
+.accordion__label {
+}
+
+.accordion__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion__item-title {
+}
+
+.accordion__item-icon {
+}
+
+.accordion__item-content {
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: block;
+  max-height: 2rem;
+  overflow: hidden;
+}
+
+input:checked ~ label {
+  max-height: 3rem;
+  overflow: visible;
+}
+
+.fas {
+}
+.fa-times {
+}
