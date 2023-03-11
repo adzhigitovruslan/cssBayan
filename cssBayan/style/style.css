@@ -2,20 +2,30 @@ html {
   font-size: 15px;
 }
 
-.main {
-}
 .container {
   padding: 1.5rem;
 }
+
 .header {
 }
 .accordion {
 }
 
-.accordion__wrapper {
+.accordion__item {
+  transition: 0.4s;
 }
 
-.accordion__item {
+@media (min-width: 961px) {
+  .accordion__wrapper:hover .accordion__item-title {
+    color: #181818;
+  }
+  .accordion__item:hover label {
+    max-height: 3rem;
+    overflow: visible;
+  }
+  .accordion__item:hover label .accordion__item-icon  {
+    transform: rotate(45deg);
+  }
 }
 
 .accordion__label {
@@ -28,11 +38,12 @@ html {
 }
 
 .accordion__item-title {
+  color: blue;
+  transition: 0.4s;
 }
 
 .accordion__item-icon {
 }
-
 .accordion__item-content {
 }
 
@@ -44,14 +55,21 @@ label {
   display: block;
   max-height: 2rem;
   overflow: hidden;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+label .accordion__item-icon  {
+  transition: 0.4s;
 }
 
 input:checked ~ label {
   max-height: 3rem;
   overflow: visible;
 }
-
-.fas {
+input:checked ~ label .accordion__item-title {
+  color: #181818;
 }
-.fa-times {
+input:checked ~ label .accordion__item-icon  {
+  transform: rotate(45deg);
 }
