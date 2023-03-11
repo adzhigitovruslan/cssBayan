@@ -1,5 +1,5 @@
 html {
-  font-size: 15px;
+  font-size: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .container {
@@ -54,6 +54,7 @@ html {
 
 .accordion__item-title {
   color: #0079ff;
+  margin-bottom: .8rem;
   transition: 0.4s;
 }
 
