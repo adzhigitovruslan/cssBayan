@@ -1,66 +1,38 @@
-html {
-  font-size: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
+body {
+  font-size: 1.45em;
+  background-color: #a6c6f3;
 }
 
 .container {
-  max-width: 90rem;
+  max-width: 50em;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1.5em;
 }
 
 .header {
-}
-.accordion {
+  margin-bottom: 0.6em;
 }
 
 .accordion__item {
-  border-top: 1px solid #a8a5a5;
-  padding-top: 1rem;
+  border-top: 0.06em solid #747171;
+  padding: 1em 0;
   transition: 0.4s;
 }
 
-.accordion__item:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 961px) {
-  @media (hover: hover) {
-    .accordion__wrapper:hover .accordion__item-title {
-      color: #181818;
-    }
-    .accordion__item:hover label {
-      max-height: 20rem;
-      overflow: visible;
-    }
-    .accordion__item:hover label .accordion__item-icon {
-      transform: rotate(45deg);
-    }
-    .accordion__item:hover .mem {
-      width: 20rem;
-      height: 16rem;
-    }
-  }
-}
-
-.accordion__label {
+.accordion__item:last-child {
+  padding-bottom: 0;
 }
 
 .accordion__item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .accordion__item-title {
   color: #0079ff;
-  margin-bottom: .8rem;
+  margin-right: 1em;
   transition: 0.4s;
-}
-
-.accordion__item-icon {
-}
-.accordion__item-content {
 }
 
 input {
@@ -68,19 +40,22 @@ input {
 }
 
 label {
+  cursor: pointer;
+}
+
+label .accordion__item-content {
   display: block;
-  max-height: 2rem;
+  max-height: 2em;
   overflow: hidden;
   transition: 1.4s;
-  cursor: pointer;
 }
 
 label .accordion__item-icon {
   transition: 0.4s;
 }
 
-input:checked ~ label {
-  max-height: 20rem;
+input:checked ~ label .accordion__item-content {
+  max-height: 16em;
   overflow: visible;
 }
 
@@ -90,20 +65,23 @@ input:checked ~ label .accordion__item-title {
 input:checked ~ label .accordion__item-icon {
   transform: rotate(45deg);
 }
+input:checked ~ label .accordion__item-header {
+  margin-bottom: 1em;
+}
 
 input:checked ~ label .mem {
-  width: 20rem;
-  height: 16rem;
+  width: 16em;
+  height: 12em;
 }
 
 .mem {
   margin: 0 auto;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  border-radius: 15px;
+  border-radius: 1em;
   transition: 1s ease-in-out;
 }
 
@@ -121,5 +99,28 @@ input:checked ~ label .mem {
   background-image: url("../assets/mem4.jpeg");
 }
 .mem5 {
-  background-image: url("../assets/mem.gif");
+  background-image: url("../assets/mem5.gif");
+}
+
+@media (min-width: 961px) and (hover: hover) {
+  .accordion__wrapper:hover .accordion__item-title {
+    color: #181818;
+  }
+  .accordion__item:hover label .accordion__item-content {
+    max-height: 16em;
+    overflow: visible;
+  }
+  .accordion__item:hover label .accordion__item-icon {
+    transform: rotate(45deg);
+  }
+  .accordion__item:hover .mem {
+    width: 16em;
+    height: 12em;
+  }
+}
+
+@media (max-width: 1920px) {
+  body {
+    font-size: calc(1em + (23 - 16) * ((100vw - 20em) / (1920 - 320)));
+  }
 }
