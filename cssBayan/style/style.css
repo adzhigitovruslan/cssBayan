@@ -1,0 +1,125 @@
+body {
+  font-size: 1.45em;
+}
+
+.container {
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+.header {
+  margin-bottom: 0.6em;
+}
+
+.accordion__item {
+  border-top: 0.06em solid #747171;
+  padding: 1em 0;
+  transition: 0.4s;
+}
+
+.accordion__item:last-child {
+  padding-bottom: 0;
+}
+
+.accordion__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion__item-title {
+  color: #0079ff;
+  margin-right: 1em;
+  transition: 0.4s;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+label .accordion__item-content {
+  display: block;
+  max-height: 2em;
+  overflow: hidden;
+  transition: 1.4s;
+}
+
+label .accordion__item-icon {
+  transition: 0.4s;
+}
+
+input:checked ~ label .accordion__item-content {
+  max-height: 16em;
+  overflow: visible;
+}
+
+input:checked ~ label .accordion__item-title {
+  color: #181818;
+}
+input:checked ~ label .accordion__item-icon {
+  transform: rotate(45deg);
+}
+input:checked ~ label .accordion__item-header {
+  margin-bottom: 1em;
+}
+
+input:checked ~ label .mem {
+  width: 16em;
+  height: 12em;
+}
+
+.mem {
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 1em;
+  transition: 1s ease-in-out;
+}
+
+.mem1 {
+  background-image: url("../assets/mem1.jpeg");
+}
+.mem2 {
+  background-image: url("../assets/mem2.png");
+}
+.mem3 {
+  background-image: url("../assets/mem3.jpeg");
+  background-size: contain;
+}
+.mem4 {
+  background-image: url("../assets/mem4.jpeg");
+}
+.mem5 {
+  background-image: url("../assets/mem5.gif");
+}
+
+@media (min-width: 961px) and (hover: hover) {
+  .accordion__wrapper:hover .accordion__item-title {
+    color: #181818;
+  }
+  .accordion__item:hover label .accordion__item-content {
+    max-height: 16em;
+    overflow: visible;
+  }
+  .accordion__item:hover label .accordion__item-icon {
+    transform: rotate(45deg);
+  }
+  .accordion__item:hover .mem {
+    width: 16em;
+    height: 12em;
+  }
+}
+
+@media (max-width: 1920px) {
+  body {
+    font-size: calc(1em + (23 - 16) * ((100vw - 20em) / (1920 - 320)));
+  }
+}
